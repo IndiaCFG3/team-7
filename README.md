@@ -2,4 +2,4 @@
 
 https://chat.whatsapp.com/F9U6ullPayuGCrtDxCGOVZ
 
-test
+Never do git force or hard reset !!!
