@@ -23,7 +23,8 @@
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "twilio": "^3.48.2"
   },
   "description": "",
   "devDependencies": {
