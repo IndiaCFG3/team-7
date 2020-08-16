@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WhatsApp Form</title>
+	<title>Text Message Form</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
@@ -71,10 +71,14 @@
   <form action="action_page.php">
 
     <label for="matter">Question</label>
-    <textarea id="matter" name="subject" placeholder="Enter upto 3 questions" style="height:200px"></textarea>
+    <textarea id="matter" name="subject" placeholder="Enter maximum 150 words"  maxlength= "150" style="height:200px"></textarea>
 		<label for="matter">Answers</label>
-		<textarea id="matter" name="answer" placeholder="Enter the answers" style="height:200px"></textarea>
-    <input type="submit" value="Send via Whatsapp">
+		<textarea id="matter" name="answer" placeholder="Enter the answers of format: Question_number.Correct_Option
+For Example-
+1.A
+2.B
+and so on" style="height:200px"></textarea>
+    <input type="submit" value="Send via Text">
 
   </form>
 </div>
