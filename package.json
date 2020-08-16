@@ -1,0 +1,32 @@
+{
+  "name": "sevenwonders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Seven Wonders",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.2",
+    "joi": "^10.4.1",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "randomstring": "^1.1.5"
+  },
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
