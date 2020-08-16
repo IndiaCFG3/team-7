@@ -5,7 +5,8 @@ const bcrypt = require('bcryptjs');
 const userSchema = new Schema({
     email: String,
     username: String,
-    cources:Array,
+    sub1:String,
+    sub2:String,
     password: String
 }, {
     timestamps: {
