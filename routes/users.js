@@ -3,8 +3,8 @@ const router = express.Router();
 const Joi = require('joi');
 const passport = require('passport');
 const Response = require('../models/studentresponse')
-   const accountSid = 'AC62178b714e87388c73230191b64af411'
-const authToken = '97e4fa38efe0e2f665f715288dd7b988'
+   const accountSid = 
+const authToken = 
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -68,8 +68,8 @@ router.route('/forms')
 
 client.messages.create({
 
-    to: '+917707901217',
-    from: '+17348871176',
+    to: 
+    from: 
     body: 'Q1->3+3=?;Q2->3*4=?'
 
 })
@@ -117,8 +117,8 @@ router.route('/qforms')
 
 client.messages.create({
 
-    to: '+917707901217',
-    from: '+12512999122',
+    to: 
+    from: '',
     body: 'asdfghj'
 
 })
