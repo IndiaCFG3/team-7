@@ -8,56 +8,26 @@
 <body>
 
 <div class="container" id="container">
-<div class="form-container sign-up-container">
+<div class="login-container sign-up-container">
 <form action="signup.php" method="post">
 	<h1>Create Account</h1>
 	<span>or use your email for registration</span>
 	<input type="text" name="name" placeholder="Name">
 	<input type="email" name="email" placeholder="Email">
 	<input type="password" name="password" placeholder="Password">
+<input list="sub" name="sub1" id="sub1" placeholder="Subject 1">
+<input list="sub" name="sub2" id="sub2" placeholder="Subject 2">
+<datalist id="sub">
+	<option value="Science">
+  <option value="Mathematics">
+  <option value="History">
+  <option value="English">
+  <option value="Geography">
+</datalist>
 	<button>SignUp</button>
 </form>
 </div>
-<div class="form-container sign-in-container">
-	<form action="login.php" method="POST">
-		<h1>Sign In</h1>
-		
-	<span>or use your account</span>
-	<input type="email" name="email" placeholder="Email">
-	<input type="password" name="passwordd" placeholder="Password">
-	<a href="#">Forgot Your Password</a>
-
-	<button>Sign In</button>
-	</form>
-</div>
-<div class="overlay-container">
-	<div class="overlay">
-		<div class="overlay-panel overlay-left">
-			<h1>Welcome Back!</h1>
-			<p>login with your personal info</p>
-			<button class="ghost" id="signIn">Sign In</button>
-		</div>
-		<div class="overlay-panel overlay-right">
-			<h1>Hello, Friend!</h1>
-			<p>Enter your details!</p>
-			<button class="ghost" id="signUp">Sign Up</button>
-		</div>
     </div>
-    
-</div>
-</div>
-
-<script type="text/javascript">
-	const signUpButton = document.getElementById('signUp');
-	const signInButton = document.getElementById('signIn');
-	const container = document.getElementById('container');
-
-	signUpButton.addEventListener('click', () => {
-		container.classList.add("right-panel-active");
-	});
-	signInButton.addEventListener('click', () => {
-		container.classList.remove("right-panel-active");
-	});
-</script>
+	</div>
 </body>
 </html>
