@@ -40,7 +40,7 @@ hr {
 /* Sections */
 
 .colored-section {
-  background-color: #11999e;
+  background-color: #e4f9f5;
   color: #fff;
 }
 
@@ -132,35 +132,18 @@ hr {
 /* Testimonial Section */
 
 #testimonials {
-  background-color: #11999e;
+  background-color: #cadefc;
 }
-.author{
-  font-size: 1.5rem;
-}
+
 .testimonial-text {
   font-size: 3rem;
   line-height: 1.5;
 }
 
-.testimg {
-  height:175px;
-  width:500px;
+.testimonial-image {
+  height:500px;
+  width:1500px;
 }
-
-/* Rating*/
-#rating {
-  padding: 100px;
-}
-
-.rating-text {
-  font-size: 2.5rem;
-  line-height: 1.5;
-}
-
-.rating-column {
-  padding: 3% 2%;
-}
-
 
 /* Info */
 
@@ -281,10 +264,7 @@ hr {
   border-radius: 0.5rem;
   position: relative;
 }
-.card-img{
-  width:170px;
-  height:200px;
-}
+
 .progress-card {
   width: 40rem;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
@@ -403,3 +383,5 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+

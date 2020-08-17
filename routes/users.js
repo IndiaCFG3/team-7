@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
 const passport = require('passport');
+const Response = require('../models/studentresponse')
+   const accountSid = 'AC218d0d10fed91213da0c5317ac01e6c8'
+const authToken = '4dd3acddda5605a6c514869c33c5d8f1'
+
+const client = require('twilio')(accountSid, authToken);
 
 const User = require('../models/user');
 
@@ -11,10 +16,16 @@ const teacherSchema = Joi.object().keys({
   email: Joi.string().email().required(),
   username: Joi.string().required(),
   // password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
+
     password: Joi.string().required(),
 
-  confirmationPassword: Joi.any().valid(Joi.ref('password')).required()
+  confirmationPassword: Joi.any().valid(Joi.ref('password')).required(),
+  sub1:Joi.string().required(),
+  sub2:Joi.string().required()
 });
+
+
+
 
 // Authorization 
 const isAuthenticated = (req, res, next) => {
@@ -35,6 +46,112 @@ const isNotAuthenticated = (req, res, next) => {
   }
 };
 
+router.route('response')
+ .post(isNotAuthenticated,(req,res)=>{
+  // const ans1=A
+  // const ans2=B
+  // const ans3=C
+
+  const response=['A','B','C']
+  
+})
+
+router.route('/forms')
+.get((req,res)=>{
+  res.render('forms')
+})
+.post(async(req,res,next)=>{
+  try{
+    console.log(req.body.subject)
+    message=`${req.body.subject}`
+ 
+
+client.messages.create({
+
+    to: '+917707901217',
+    from: '+12512999122',
+    body: message
+
+})
+
+.then((message) => console.log(message.sid));
+     req.flash('success', 'form submit Successfully');
+
+  }catch(error){
+    next(error);
+  }
+});
+
+router.route('/whatsapp_form')
+.get((req,res)=>{
+  res.render('whatsapp_form')
+})
+.post(async(req,res,next)=>{
+  try{
+    console.log(req.body.subject)
+     req.flash('success', 'form submit Successfully');
+
+  }catch(error){
+    next(error);
+  }
+});
+router.route('/progressPage')
+.get((req,res)=>{
+  res.render('progressPage')
+})
+
+
+router.route('/qforms')
+.get((req,res)=>{
+  res.render('qforms')
+
+})
+.post(async(req,res,next)=>{
+  try{
+    // console.log(req.body.subject)
+    message=`${req.body.subject}`
+
+    console.log(req.body.answer)
+ 
+
+client.messages.create({
+
+    to: '+917707901217',
+    from: '+12512999122',
+    body: message
+
+})
+
+.then((message) => console.log(message.sid));
+     req.flash('success', 'form submit Successfully');
+
+  }catch(error){
+    next(error);
+  }
+});
+
+
+
+
+router.route('/qwhatsapp_form')
+.get(isNotAuthenticated,(req,res)=>{
+  res.render('qwhatsapp_form')
+})
+.post(async(req,res,next)=>{
+  try{
+    console.log(req.body.subject)
+          console.log(req.body.answer)
+
+     req.flash('success', 'form submit Successfully');
+
+  }catch(error){
+    next(error);
+  }
+});
+
+
+
+
 router.route('/register')
   .get(isNotAuthenticated, (req, res) => {
     res.render('register');
@@ -42,6 +159,7 @@ router.route('/register')
   .post(async (req, res, next) => {
     try {
       const result = Joi.validate(req.body, teacherSchema);
+      console.log(result)
       if (result.error) {
         req.flash('error', 'Data is not valid. Please try again.');
         res.redirect('/users/register');
