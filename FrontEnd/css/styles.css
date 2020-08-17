@@ -40,7 +40,7 @@ hr {
 /* Sections */
 
 .colored-section {
-  background-color: #e4f9f5;
+  background-color: #11999e;
   color: #fff;
 }
 
@@ -132,17 +132,19 @@ hr {
 /* Testimonial Section */
 
 #testimonials {
-  background-color: #cadefc;
+  background-color: #11999e;
 }
-
+.author{
+  font-size: 1.5rem;
+}
 .testimonial-text {
   font-size: 3rem;
   line-height: 1.5;
 }
 
-.testimonial-image {
-  height:500px;
-  width:1500px;
+.testimg {
+  height:175px;
+  width:500px;
 }
 
 /* Rating*/
