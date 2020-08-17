@@ -145,6 +145,21 @@ hr {
   width:1500px;
 }
 
+/* Rating*/
+#rating {
+  padding: 100px;
+}
+
+.rating-text {
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.rating-column {
+  padding: 3% 2%;
+}
+
+
 /* Info */
 
 #info {
@@ -264,7 +279,10 @@ hr {
   border-radius: 0.5rem;
   position: relative;
 }
-
+.card-img{
+  width:170px;
+  height:200px;
+}
 .progress-card {
   width: 40rem;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
